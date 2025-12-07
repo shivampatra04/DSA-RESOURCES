@@ -1,0 +1,18 @@
+#Check For Palindrome Effectively if Binary is Given..
+bool check(int x){
+  string s;
+
+        while (x > 0) {
+            s.push_back((x & 1) ? '1' : '0');
+            x >>= 1;
+        }
+
+        int start = 0, end = (int)s.size() - 1;
+        while (start < end) {
+            if (s[start] != s[end]) return false;
+            start++;
+            end--;
+        }
+        return true;
+}
+ 
